@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,33 +7,69 @@
     tools:context="a.simpleapplication.MainActivity">
 
     <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/HELLO"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:text="HELLO:"/>
+
+        <TextView
+            android:id="@+id/user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="495dp"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        app:layout_constraintLeft_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        tools:layout_editor_absoluteY="0dp"
         android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent">
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        app:layout_constraintHorizontal_bias="0.823"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_editor_absoluteY="0dp">
 
-    <Button
-        android:id="@+id/buttonFragment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Go To Fragment"
-        tools:layout_editor_absoluteY="115dp"
-        tools:layout_editor_absoluteX="121dp"
-        />
+        <Button
+            android:id="@+id/buttonFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ADD USER"
+            android:onClick="addu"
+            tools:layout_editor_absoluteX="121dp"
+            tools:layout_editor_absoluteY="115dp" />
+        <Button
+            android:id="@+id/buttonFragment2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LIST USER"
+            android:onClick="listu"
+            tools:layout_editor_absoluteX="121dp"
+            tools:layout_editor_absoluteY="115dp" />
+        <Button
+            android:id="@+id/buttonFragment3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Go To Fragment"
+            android:onClick="gotofragment"
+            tools:layout_editor_absoluteX="121dp"
+            tools:layout_editor_absoluteY="115dp" />
 
-    <Button
-        android:id="@+id/buttonActivity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteY="198dp"
-        tools:layout_editor_absoluteX="127dp"
-        android:text="Go To Activity"/>
+        <Button
+            android:id="@+id/buttonActivity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Go To Activity"
+            android:onClick="gotoactivity"
+            tools:layout_editor_absoluteX="127dp"
+            tools:layout_editor_absoluteY="198dp" />
+
 
     </LinearLayout>
 
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>

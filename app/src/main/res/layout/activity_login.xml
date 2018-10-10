@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Email" />
+        android:hint="Email" />
 
     <EditText
         android:id="@+id/editText2"
@@ -22,11 +22,12 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPassword"
-        android:text=""/>
+        android:hint="password"/>
 
     <Button
         android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="SIGN IN" />
+        android:text="SIGN IN"
+        android:onClick="Login"/>
 </LinearLayout>

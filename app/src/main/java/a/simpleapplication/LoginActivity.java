@@ -3,7 +3,11 @@ package a.simpleapplication;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
 import android.widget.Toast;
+
+import a.simpleapplication.util.PreferencesHelper;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -18,18 +22,29 @@ public class LoginActivity extends AppCompatActivity {
 
         instance = PreferencesHelper.getInstance(getApplicationContext());
 
-        name = (EditText) findViewById(R.id.etName);
-        email = (EditText) findViewById(R.id.etEmail);
+        name = (EditText) findViewById(R.id.editText);
+        email = (EditText) findViewById(R.id.editText2);
 
     }
-    public void Login(View view){
-        String n = name.getText().toString();
-        String e = email.getText().toString();
-        Toast.makeText(getApplicationContext(), "Success Login", Toast.LENGTH_SHORT).show();
-        instance.setLogin(true);
-        instance.setName(n);
 
-        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+    public void Login(View view) {
+            String n = name.getText().toString();
+            String e = email.getText().toString();
+            Toast.makeText(getApplicationContext(), "Success Login", Toast.LENGTH_SHORT).show();
+            instance.setLogin(true);
+            instance.setName(n);
+
+            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+            startActivity(intent);
+
+        Bundle ade = new Bundle();
+
+        ade.putString("nama", n);
+        intent.putExtras(ade);
         startActivity(intent);
+        finish();
+        }
+
     }
-}
+
+
